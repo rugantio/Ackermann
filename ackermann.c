@@ -1,5 +1,6 @@
 #include <stdio.h>
- 
+#include <time.h>
+
 int ackermann(int m, int n)
 {
         if (!m) return n + 1;
@@ -10,9 +11,15 @@ int ackermann(int m, int n)
 int main()
 {
         int m, n;
-        for (m = 0; m <= 4; m++)
+        
+	clock_t begin = clock();
+
+	for (m = 0; m <= 6; m++)
                 for (n = 0; n < 6 - m; n++)
                         printf("A(%d, %d) = %d\n", m, n, ackermann(m, n));
  
+	clock_t end = clock();
+	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
+	printf("Time spent computing was: %f", time_spent);
         return 0;
 }
