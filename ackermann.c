@@ -12,14 +12,15 @@ int main()
 {
         int m, n;
         
-	clock_t begin = clock();
+	clock_t tic = clock();
 
 	for (m = 0; m <= 6; m++)
                 for (n = 0; n < 6 - m; n++)
                         printf("A(%d, %d) = %d\n", m, n, ackermann(m, n));
  
-	clock_t end = clock();
-	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
-	printf("Time spent computing was: %f\n", time_spent);
+	clock_t toc = clock();
+	
+	double time_spent = (double) (toc - tic) / CLOCKS_PER_SEC;
+	printf("Time spent computing was: %f seconds\n", time_spent);
         return 0;
 }
