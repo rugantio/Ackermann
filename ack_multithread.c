@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <pthread.h>
 #include <time.h>
 
 int ackermann(int m, int n)
@@ -13,10 +14,12 @@ int main()
         int m, n;
         
 	clock_t tic = clock();
-
-	for (m = 0; m <= 6; m++)
-                for (n = 0; n < 6 - m; n++)
-                        printf("A(%d, %d) = %d\n", m, n, ackermann(m, n));
+	
+	pthread_create (&t,NULL,ackermann,(void*)&num;)	
+	
+	for (m = 0; m <= 5; m++)
+		for (n = 0; n < 6 - m; n++)
+			printf("A(%d, %d) = %d\n", m, n, ackermann(m, n));
  
 	clock_t toc = clock();
 	
