@@ -2,7 +2,7 @@
 #include <pthread.h>
 #include <time.h>
 
-#define THREADS 4
+#define THREADS 4 //define number of threads (one for each core)
 
 int ackermann(int m, int n)
 {
@@ -24,7 +24,7 @@ int main()
 	clock_t tic = clock();
 	
 	int t;
-  	for (t = 0; t < THREADS; t++) {
+  	for (t = 0; t < THREADS; t++) { //initialize thread 
    		pthread_create(&threads[t], NULL, f, NULL);
 	}
 
