@@ -15,7 +15,7 @@ int main()
         
 	clock_t tic = clock();
 	
-	pthread_create (&t,NULL,ackermann,(void*)&num;)	
+	pthread_create((&t,NULL,ackermann,(void*)&num));	
 	
 	for (m = 0; m <= 5; m++)
 		for (n = 0; n < 6 - m; n++)
